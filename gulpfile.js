@@ -1,7 +1,7 @@
 const elixir = require('laravel-elixir');
-
 require('laravel-elixir-vue');
 
+var del = require('del');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,7 +13,32 @@ require('laravel-elixir-vue');
  |
  */
 
+elixir.extend('delfile', function(message) {
+    new elixir.Task('delfile', function() {
+        del([
+            'public/admin',
+            'public/default'
+        ]);
+    });
+});
+
+// elixir(mix => {
+//     mix.sass('app.scss')
+//        .webpack('app.js');
+// });
+
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    mix.sass(
+    'admin/admin.scss',
+    'public/admin/css'
+);
+mix.sass(
+    'default/default.scss',
+    'public/default/css'
+);
+mix.version([
+    'admin/css/admin.css',
+    'default/css/default.css'
+]);
+mix.delfile();
 });
