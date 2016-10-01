@@ -4,7 +4,7 @@
         <small></small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="{{URL::route('admin.index')}}">@lang('sys.home')</a></li>
+        <li>@lang('basic.home')</li>
         @foreach($breadcrumb as $item)
             <li><a href="{{$item['url']}}">{{$item['title']}}</a></li>
         @endforeach

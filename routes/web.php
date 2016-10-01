@@ -12,9 +12,10 @@
 */
 
 Route::get('/',['uses'=>'Home\IndexController@index','as'=>'index']);
+Route::get('index', 'Home\IndexController@index');
 Route::post('login', 'Home\LoginController@login');
 Route::get('login', 'Home\LoginController@showLoginForm')->name('login');
-Route::get('logout', 'Home\LoginController@logout')->name('logout');
+Route::post('logout', 'Home\LoginController@logout')->name('logout');
 // Registration Routes...
 Route::get('register', 'Home\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Home\RegisterController@register');
