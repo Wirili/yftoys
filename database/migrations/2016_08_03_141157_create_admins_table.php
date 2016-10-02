@@ -18,8 +18,9 @@ class CreateAdminsTable extends Migration
             $table->string('email')->unique()->comment('邮箱');
             $table->string('mobile')->nullable()->comment('手机');
             $table->string('password')->comment('密码');
-            $table->timestamp('last_login')->comment('最后登陆时间');
+            $table->dateTime('last_time')->nullable()->comment('最后登陆时间');
             $table->string('last_ip',15)->default('')->comment('登陆IP');
+            $table->unsignedInteger('login_count')->default(0)->comment('登陆次数');
             $table->rememberToken();
 //            $table->timestamps();
         });

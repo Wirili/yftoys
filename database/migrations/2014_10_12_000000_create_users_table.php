@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->comment('密码');
             $table->dateTime('last_time')->nullable()->comment('登录时间');
             $table->string('last_ip',50)->default('')->comment('登陆IP');
+            $table->unsignedInteger('login_count')->default(0)->comment('登陆次数');
             $table->rememberToken();
 //            $table->timestamps();
         });
