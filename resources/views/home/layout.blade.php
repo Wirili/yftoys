@@ -65,6 +65,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{URL::route('index')}}">@lang('index.index')</a></li>
                 <li><a href="{{URL::route('about')}}">@lang('index.about')</a></li>
+                <li><a href="{{URL::route('contact')}}">@lang('index.contact')</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())

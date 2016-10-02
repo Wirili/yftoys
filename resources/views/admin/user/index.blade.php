@@ -13,12 +13,8 @@
                                 <th class="text-center" width="40">@lang('basic.id')</th>
                                 <th class="text-center" width="80">@lang('user.name')</th>
                                 <th class="text-center">@lang('user.fullname')</th>
-                                <th class="text-center" width="80">@lang('user.parent_name')</th>
-                                <th class="text-center" width="80">@lang('user.child_count')</th>
-                                <th class="text-center" width="80">@lang('user.reg_time')</th>
-                                <th class="text-center" width="80">@lang('user.is_pass')</th>
-                                <th class="text-center" width="80">@lang('user.pass_time')</th>
                                 <th class="text-center" width="80">@lang('user.last_time')</th>
+                                <th class="text-center" width="80">@lang('user.last_ip')</th>
                                 <th class="text-center" width="100">@lang('basic.handle')</th>
                             </tr>
                             </thead>
@@ -51,32 +47,8 @@
                     {data: 'user_id',className:'text-center'},
                     {data: 'name'},
                     {data: 'fullname'},
-                    {data: 'parent_id',
-                    render:function(data,type,row){
-                        if(row.parent)
-                            return row.parent.name;
-                        return '';
-                    }
-                    },
-                    {
-                        data: 'child_count',
-                        className: 'text-center',
-                    },
-                    {data: 'reg_time'},
-                    {
-                        data: 'is_pass',
-                        className: 'text-center',
-                        render:function(data,type,row){
-                            if(data==1){
-                                data="<i class='fa fa-check text-success'></i>";
-                            }else{
-                                data="<i class='fa fa-remove text-danger'></i>"
-                            }
-                            return data;
-                        }
-                    },
-                    {data: 'pass_time'},
                     {data: 'last_time'},
+                    {data: 'last_ip'},
                     {
                         data: 'user_id',
                         className: 'text-center',

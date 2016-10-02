@@ -14,7 +14,8 @@ return [
     */
 
     'index'=>'首页',
-    'about'=>'关于我们',
+    'about'=>'公司简介',
+    'contact'=>'联系我们',
     'search'=>'搜索',
     'keyword'=>'关键字',
 ];

@@ -15,7 +15,7 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('cat_id');
+            $table->unsignedInteger('cat_id')->default(0);
             $table->string('title',255)->default('')->comment('标题');
             $table->string('alias',50)->default('')->comment('调用别名');
             $table->string('keywords',255)->default('')->comment('关键字');

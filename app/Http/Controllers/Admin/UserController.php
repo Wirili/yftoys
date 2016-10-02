@@ -115,7 +115,7 @@ class UserController extends Controller
     public function ajax(Request $request)
     {
         $filter = $request->only(['draw', 'columns', 'order', 'start', 'length']);
-        $data = User::with('parent')->orderBy($filter['columns'][$filter['order'][0]['column']]['data'], $filter['order'][0]['dir'])->forPage($filter['start'] / $filter['length'] + 1, $filter['length'])->get();
+        $data = User::orderBy($filter['columns'][$filter['order'][0]['column']]['data'], $filter['order'][0]['dir'])->forPage($filter['start'] / $filter['length'] + 1, $filter['length'])->get();
         $recordsTotal = User::count();
         $recordsFiltered = User::count();
         return [

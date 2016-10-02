@@ -22,4 +22,12 @@ class ArticleController extends Controller
             'article' => $article
         ]);
     }
+
+    public function contact()
+    {
+        $article = Article::where('alias', 'contact')->first();
+        return view('home.article.contact', [
+            'article' => $article
+        ]);
+    }
 }
