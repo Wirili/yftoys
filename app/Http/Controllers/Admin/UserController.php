@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\models\CorpsMember;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Validator;
@@ -24,8 +23,7 @@ class UserController extends Controller
         if(!$this->adminGate('user_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
-        CorpsMember::split_corps(1,3);
-        return view('admin.user_index',[
+        return view('admin.user.index',[
             'page_title'=>trans('user.list'),
             'breadcrumb'=>$this->breadcrumb
         ]);
@@ -38,7 +36,7 @@ class UserController extends Controller
         }
         $this->breadcrumb[]=['url'=>'javascript:void(0)','title'=>trans('user.edit')];
         $user = User::find($id);
-        return view('admin.user_edit', [
+        return view('admin.user.edit', [
             'page_title'=>trans('user.edit'),
             'breadcrumb'=>$this->breadcrumb,
             'user' => $user
@@ -52,7 +50,7 @@ class UserController extends Controller
         }
         $this->breadcrumb[]=['url'=>'javascript:void(0)','title'=>trans('user.create')];
         $user = new User();
-        return view('admin.user_edit', [
+        return view('admin.user.edit', [
             'page_title'=>trans('user.create'),
             'breadcrumb'=>$this->breadcrumb,
             'user' => $user

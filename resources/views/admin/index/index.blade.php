@@ -80,9 +80,6 @@
                         <li>
                             <a href="{{URL::route('admin.config.edit')}}" target="main-content"><i class="fa fa-circle-o"></i>基本配置</a>
                         </li>
-                        <li>
-                            <a href="{{URL::route('admin.farm.index')}}" target="main-content"><i class="fa fa-circle-o"></i>宠物设置</a>
-                        </li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -96,9 +93,6 @@
                     <ul class="treeview-menu">
                         <li>
                             <a href="{{URL::route('admin.user.index')}}" target="main-content"><i class="fa fa-circle-o"></i>会员列表</a>
-                        </li>
-                        <li>
-                            <a href="index.html" target="main-content"><i class="fa fa-circle-o"></i>会员宠物列表</a>
                         </li>
                     </ul>
                 </li>

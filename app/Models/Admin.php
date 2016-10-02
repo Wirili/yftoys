@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Admin extends Authenticatable
 {
     use EntrustUserTrait;
-    protected $primaryKey='user_id';
+    protected $primaryKey = 'user_id';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.

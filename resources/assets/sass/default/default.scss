@@ -8,6 +8,17 @@ input::-webkit-inner-spin-button{
   margin: 0;
 }
 
+footer{
+  height:50px;
+  line-height:50px;
+  background-color: #000;
+  color:#fff;
+  a{
+    font-weight: 600;
+    color:#fff;
+  }
+}
+
 .custom-pagination {
   .pagination {
     margin: 0;

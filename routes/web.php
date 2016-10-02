@@ -20,6 +20,9 @@ Route::post('logout', 'Home\LoginController@logout')->name('logout');
 Route::get('register', 'Home\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Home\RegisterController@register');
 
+Route::get('about', 'Home\ArticleController@about')->name('about');
+
+
 Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::get('welcome', ['uses'=>'Admin\IndexController@welcome','as'=>'welcome']);
     Route::get('/', ['uses'=>'Admin\IndexController@index','as'=>'/']);
