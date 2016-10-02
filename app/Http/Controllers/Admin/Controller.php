@@ -22,7 +22,7 @@ class Controller extends BaseController
      * @param int $wait
      * @return mixed
      */
-    public function msg($content,$link='',$type='success',$wait=2){
+    public function Msg($content,$link='',$type='success',$wait=2){
         if (empty($link))
             $link = 'javascript:history.back();';
         $title = $type=='error'?'错误信息':'提示信息';

@@ -34,7 +34,7 @@ class RoleController extends Controller
         if(!$this->adminGate('role_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
-        return view('admin.role_index',[
+        return view('admin.role.index',[
             'page_title'=>trans('role.list'),
             'breadcrumb'=>$this->breadcrumb
         ]);
@@ -52,7 +52,7 @@ class RoleController extends Controller
         foreach ($role->perms as $perm) {
             $perms[$perm->id]=1;
         }
-        return view('admin.role_edit', [
+        return view('admin.role.edit', [
             'page_title'=>trans('role.edit'),
             'breadcrumb'=>$this->breadcrumb,
             'role' => $role,
@@ -70,7 +70,7 @@ class RoleController extends Controller
         $role = new Role();
         $permission = Permission::where('parent_id',0)->get();
         $perms=[];
-        return view('admin.role_edit', [
+        return view('admin.role.edit', [
             'page_title'=>trans('role.create'),
             'breadcrumb'=>$this->breadcrumb,
             'role' => $role,

@@ -37,7 +37,7 @@ class ArticleController extends Controller
         if(!$this->adminGate('article_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
-        return view('admin.article_index',[
+        return view('admin.article.index',[
             'page_title'=>trans('article.list'),
             'breadcrumb'=>$this->breadcrumb
         ]);
@@ -51,7 +51,7 @@ class ArticleController extends Controller
         $this->breadcrumb[]=['url'=>'javascript:void(0)','title'=>trans('article.edit')];
         $article = Article::find($id);
         $cat = ArticleCat::all();
-        return view('admin.article_edit', [
+        return view('admin.article.edit', [
             'page_title'=>trans('article.edit'),
             'breadcrumb'=>$this->breadcrumb,
             'article' => $article,
@@ -67,7 +67,7 @@ class ArticleController extends Controller
         $this->breadcrumb[]=['url'=>'javascript:void(0)','title'=>trans('article.create')];
         $article = new Article();
         $cat = ArticleCat::all();
-        return view('admin.article_edit', [
+        return view('admin.article.edit', [
             'page_title'=>trans('article.create'),
             'breadcrumb'=>$this->breadcrumb,
             'article' => $article,
@@ -105,6 +105,7 @@ class ArticleController extends Controller
         }
 
         $article->title = $request->title;
+        $article->alias = $request->alias;
         $article->cat_id = $request->cat_id;
         $article->description = $request->description;
         $article->keywords = $request->keywords;

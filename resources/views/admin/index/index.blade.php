@@ -83,12 +83,6 @@
                         <li>
                             <a href="{{URL::route('admin.farm.index')}}" target="main-content"><i class="fa fa-circle-o"></i>宠物设置</a>
                         </li>
-                        <li>
-                            <a href="{{URL::route('admin.article.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章列表</a>
-                        </li>
-                        <li>
-                            <a href="{{URL::route('admin.article_cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章类别</a>
-                        </li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -145,6 +139,23 @@
                         </li>
                         <li>
                             <a href="index.html" target="main-content"><i class="fa fa-circle-o"></i>退货单列表</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-dashboard"></i>
+                        <span>文章管理</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{URL::route('admin.article.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章列表</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::route('admin.article_cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章类别</a>
                         </li>
                     </ul>
                 </li>

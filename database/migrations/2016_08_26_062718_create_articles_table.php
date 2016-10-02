@@ -16,11 +16,12 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('cat_id');
-            $table->string('title',255)->default('')->comment('');
-            $table->string('keywords',255)->default('')->comment('');
-            $table->string('description',255)->default('')->comment('');
-            $table->text('contents')->comment('');
-            $table->dateTime('add_time')->nullable();
+            $table->string('title',255)->default('')->comment('标题');
+            $table->string('alias',50)->default('')->comment('调用别名');
+            $table->string('keywords',255)->default('')->comment('关键字');
+            $table->string('description',255)->default('')->comment('简单描述');
+            $table->text('contents')->comment('文章内容');
+            $table->dateTime('add_time')->nullable()->comment('添加时间');
 //            $table->timestamps();
         });
     }

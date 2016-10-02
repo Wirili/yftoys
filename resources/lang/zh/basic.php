@@ -6,5 +6,6 @@ return [
     'reset' => '重置',
     'cancel' => '取消',
     'handle' => '操作',
-    'home' => '首页'
+    'home' => '首页',
+    'id' => 'ID'
 ];

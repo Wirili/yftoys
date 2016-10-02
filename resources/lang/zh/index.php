@@ -13,16 +13,8 @@ return [
     |
     */
 
-    'label' => [
-        'email' => '邮箱',
-        'name' => '用户名',
-        'password' => '密码',
-        'remember' => '记住登陆',
-    ],
-    'button'=>[
-        'login'=>'登陆',
-        'logout'=>'退出',
-        'register'=>'注册',
-        'forget'=>'忘记密码',
-    ],
+    'index'=>'首页',
+    'about'=>'关于我们',
+    'search'=>'搜索',
+    'keyword'=>'关键字',
 ];

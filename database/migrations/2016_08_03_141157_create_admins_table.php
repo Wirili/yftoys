@@ -20,7 +20,6 @@ class CreateAdminsTable extends Migration
             $table->string('password')->comment('密码');
             $table->timestamp('last_login')->comment('最后登陆时间');
             $table->string('last_ip',15)->default('')->comment('登陆IP');
-            $table->unsignedInteger('suppliers_id')->default(0)->comment('供应商id');
             $table->rememberToken();
             $table->timestamps();
         });

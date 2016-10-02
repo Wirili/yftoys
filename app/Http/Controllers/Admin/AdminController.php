@@ -40,7 +40,7 @@ class AdminController extends Controller
         if(!$this->adminGate('admin_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
-        return view('admin.admin_index',[
+        return view('admin.admin.index',[
             'page_title'=>trans('admin.list'),
             'breadcrumb'=>$this->breadcrumb
         ]);
@@ -66,7 +66,7 @@ class AdminController extends Controller
                 $perms[$perm->id]=1;
             }
         }
-        return view('admin.admin_edit', [
+        return view('admin.admin.edit', [
             'page_title'=>trans('admin.edit'),
             'breadcrumb'=>$this->breadcrumb,
             'admin' => $admin,'roles'=>$roles,
@@ -91,7 +91,7 @@ class AdminController extends Controller
 
         $permission = Permission::where('parent_id',0)->get();
         $perms=[];
-        return view('admin.admin_edit', [
+        return view('admin.admin.edit', [
             'page_title'=>trans('admin.create'),
             'breadcrumb'=>$this->breadcrumb,
             'admin' => $admin,

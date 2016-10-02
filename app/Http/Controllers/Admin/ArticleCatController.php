@@ -36,7 +36,7 @@ class ArticleCatController extends Controller
         if(!$this->adminGate('article_cat_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
-        return view('admin.article_cat_index',[
+        return view('admin.article_cat.index',[
             'page_title'=>trans('article_cat.list'),
             'breadcrumb'=>$this->breadcrumb
         ]);
@@ -49,7 +49,7 @@ class ArticleCatController extends Controller
         }
         $this->breadcrumb[]=['url'=>'javascript:void(0)','title'=>trans('article_cat.edit')];
         $article_cat = ArticleCat::find($id);
-        return view('admin.article_cat_edit', [
+        return view('admin.article_cat.edit', [
             'page_title'=>trans('article_cat.edit'),
             'breadcrumb'=>$this->breadcrumb,
             'article_cat' => $article_cat
@@ -65,7 +65,7 @@ class ArticleCatController extends Controller
         $article_cat = new ArticleCat([
             'sort_order'=>100
         ]);
-        return view('admin.article_cat_edit', [
+        return view('admin.article_cat.edit', [
             'page_title'=>trans('article_cat.create'),
             'breadcrumb'=>$this->breadcrumb,
             'article_cat' => $article_cat
@@ -102,6 +102,7 @@ class ArticleCatController extends Controller
         }
 
         $article_cat->title = $request->title;
+        $article_cat->alias = $request->alias;
         $article_cat->sort_order = $request->input('sort_order',0);
         $article_cat->save();
 
