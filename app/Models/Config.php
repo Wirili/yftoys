@@ -2,6 +2,7 @@
 
 namespace App\models;
 
+use Cache;
 use Illuminate\Database\Eloquent\Model;
 
 class Config extends Model
@@ -22,13 +23,29 @@ class Config extends Model
             return false;
     }
 
-    public static function getConfig()
+    public function save(array $options = [])
     {
+        parent::save($options);
         $config=[];
         foreach (self::where('parent_id','<>',0)->get() as $k=>$v)
         {
             $config[$v->code]=$v->value;
         }
-        return $config;
+        Cache::store('file')->put('web_config',$config,60);
+    }
+
+    public static function getConfig()
+    {
+        if(!Cache::store('file')->has('web_config')){
+            $config=[];
+            foreach (self::where('parent_id','<>',0)->get() as $k=>$v)
+            {
+                $config[$v->code]=$v->value;
+            }
+            Cache::store('file')->put('web_config',$config,60);
+            return $config;
+        }else{
+            return Cache::store('file')->get('web_config');
+        }
     }
 }

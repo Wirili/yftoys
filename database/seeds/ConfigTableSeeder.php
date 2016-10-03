@@ -23,17 +23,22 @@ class ConfigTableSeeder extends Seeder
             'parent_id'=>1,
             'code'=>'web_title',
             'type'=>'text',
-            'value'=>'军团互助'
+            'value'=>'网站'
         ],[
             'parent_id'=>1,
             'code'=>'web_desc',
             'type'=>'text',
-            'value'=>'军团互助'
+            'value'=>'网站'
         ],[
             'parent_id'=>1,
             'code'=>'web_keys',
             'type'=>'text',
-            'value'=>'军团互助'
+            'value'=>'网站'
+        ],[
+            'parent_id'=>1,
+            'code'=>'icp',
+            'type'=>'text',
+            'value'=>'粤ICP备15067622号-1'
         ],[
             'parent_id'=>1,
             'code'=>'web_close',

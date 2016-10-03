@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{$page_title or ''}} - {{$C['web_title'] or '网站首页'}}</title>
-
+    <title>{{isset($page_title)?$page_title.' - ':''}}{{$C['web_title'] or '网站首页'}}</title>
+    <meta name="keywords" content="{{$C['web_keys'] or ''}}">
+    <meta name="description" content="{{$C['web_desc'] or ''}}">
     <!-- Styles -->
     <link href="{{asset('build/common/css/bootstrap.min.css')}}" rel="stylesheet" type='text/css'>
     <link href="{{asset('build/common/css/font-awesome.min.css')}}" rel="stylesheet" type='text/css'>
@@ -107,7 +108,7 @@
 @yield('content')
 @yield('footer')
 <footer>
-    <div class="container">&copy;版权所有</div>
+    <div class="container">{!! isset($C['icp'])&&!empty($C['icp'])?'<a href="www.miitbeian.gov.cn">'.$C['icp'].'</a>':'' !!} &copy; 版权所有</div>
 </footer>
 </body>
 </html>

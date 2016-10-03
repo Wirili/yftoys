@@ -17,16 +17,18 @@ class ArticleController extends Controller
 
     public function about()
     {
-        $article = Article::where('alias', 'about')->first();
+        $article = Article::where('alias', 'about')->firstOrNew(['title' => '公司简介']);
         return view('home.article.about', [
+            'page_title' => $article->title,
             'article' => $article
         ]);
     }
 
     public function contact()
     {
-        $article = Article::where('alias', 'contact')->first();
+        $article = Article::where('alias', 'contact')->firstOrNew(['title' => '联系我们']);
         return view('home.article.contact', [
+            'page_title' => $article->title,
             'article' => $article
         ]);
     }

@@ -10,6 +10,7 @@ return [
     'web_keys' => '网站关键词',
     'web_close' => '关闭网站',
     'web_qq' => '客服QQ',
+    'icp' => '备案ICP号',
     'range'=>[
         'web_close'=>[
             0=>'关闭',
@@ -18,6 +19,7 @@ return [
     ],
     'desc'=>[
         'web_qq'=>'多个QQ请使用英文单引号隔开如“123,124”',
+        'web_keys'=>'多个关键字请使用英文单引号隔开如“关键字,关键字1”',
     ],
     'pls'=>'请选择',
     'save_success' =>'网站配置保存成功！',
