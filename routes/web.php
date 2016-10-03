@@ -22,6 +22,7 @@ Route::post('register', 'Home\RegisterController@register');
 
 Route::get('about', 'Home\ArticleController@about')->name('about');
 Route::get('contact', 'Home\ArticleController@contact')->name('contact');
+Route::get('category/{id}', 'Home\CategoryController@index')->name('category');
 
 
 Route::group(['prefix' => 'admin','as'=>'admin.'], function () {

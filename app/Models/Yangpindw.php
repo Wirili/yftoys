@@ -9,5 +9,6 @@ class Yangpindw extends Model
     //
     protected $table='yangpindw';
     protected $primaryKey='yangpindw';
+    protected $keyType='string';
     public $timestamps=false;
 }

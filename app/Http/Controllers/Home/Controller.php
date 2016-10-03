@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Config;
+use App\Models\Leibie;
 
 class Controller extends BaseController
 {
@@ -16,5 +17,7 @@ class Controller extends BaseController
     {
         $this->config=Config::getConfig();
         view()->share('C',$this->config);
+        $a=Leibie::orderBy('id','asc')->get();
+        view()->share('leibies',Leibie::orderBy('id','asc')->get());
     }
 }

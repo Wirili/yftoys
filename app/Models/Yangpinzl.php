@@ -9,5 +9,6 @@ class Yangpinzl extends Model
     //
     protected $table='yangpinzl';
     protected $primaryKey='bianhao';
+    protected $keyType='string';
     public $timestamps=false;
 }

@@ -9,5 +9,6 @@ class Baozhuangfs extends Model
     //
     protected $table='baozhuangfs';
     protected $primaryKey='baozhuangfs';
+    protected $keyType='string';
     public $timestamps=false;
 }
