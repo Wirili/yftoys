@@ -11,4 +11,12 @@ class Yangpinzl extends Model
     protected $primaryKey='bianhao';
     protected $keyType='string';
     public $timestamps=false;
+
+    public static function getTuyang($tuyang)
+    {
+        if(\Storage::disk('picture')->exists('picture/'.$tuyang))
+            return '/picture/'.$tuyang;
+        else
+            return '/build/default/images/no_picture.gif';
+    }
 }
