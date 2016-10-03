@@ -19,52 +19,26 @@
                         <div class="col-md-4"><input type="text" class="form-control input-sm" name="name" id="name"  value="{{$user->name}}"></div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="parent_name">@lang('user.parent_name')</label>
-                        <div class="col-md-4"><input class="form-control input-sm" name="parent_name" id="parent_name" value="{{$user->parent_name}}"></div>
+                        <label class="col-md-2 control-label" for="fullname">@lang('user.fullname')</label>
+                        <div class="col-md-4"><input class="form-control input-sm" name="fullname" id="fullname" value="{{$user->fullname}}"></div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="is_pass">@lang('user.is_pass')</label>
-                        <div class="col-md-4">
-                            <select class="form-control" name="is_pass" id="is_pass">
-                                @foreach(trans('user.pass_option') as $k=>$v)
-                                <option value="{{$k}}" @if($user->is_pass==$k) selected @endif>{{$v}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="level">@lang('user.level')</label>
-                        <div class="col-md-4">
-                            <select class="form-control" name="level" id="level">
-                                @foreach(trans('config.level') as $k=>$v)
-                                    <option value="{{$k}}" @if($user->is_pass==$k) selected @endif>{{$v}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">@lang('user.point1')</label>
-                        <div class="col-md-4"><p class="form-control-static">{{$user->point1}}</p></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label">@lang('user.point2')</label>
-                        <div class="col-md-4"><p class="form-control-static">{{$user->point2}}</p></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="name">@lang('user.password')</label>
+                        <label class="col-md-2 control-label" for="password">@lang('user.password')</label>
                         <div class="col-md-4"><input type="password" class="form-control input-sm" name="password" id="password"></div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="name">@lang('user.password2')</label>
-                        <div class="col-md-4"><input type="password" class="form-control input-sm" name="password2" id="password2"></div>
+                        <label class="col-md-2 control-label" for="is_check">@lang('user.is_check')</label>
+                        <div class="col-md-4">
+                            <select class="form-control" name="is_check" id="is_check">
+                                @foreach(trans('user.check_option') as $key => $value)
+                                    <option value="{{$key}}" @if($value==$user->is_check) selected @endif>{{$value}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-2 control-label" >@lang('user.reg_time')</label>
-                        <div class="col-md-4"><p class="form-control-static">{{$user->reg_time}}</p></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" >@lang('user.reg_ip')</label>
-                        <div class="col-md-4"><p class="form-control-static">{{$user->reg_ip}}</p></div>
+                        <label class="col-md-2 control-label" for="email">@lang('user.email')</label>
+                        <div class="col-md-4"><input class="form-control input-sm" name="email" id="email" value="{{$user->email}}"></div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-2 control-label" >@lang('user.login_count')</label>

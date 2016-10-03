@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('fullname',100)->default('')->comment('姓名');
             $table->string('email',100)->comment('邮箱');
             $table->string('password')->comment('密码');
+            $table->string('is_check')->default(0)->comment('能否查看价格');
             $table->dateTime('last_time')->nullable()->comment('登录时间');
             $table->string('last_ip',50)->default('')->comment('登陆IP');
             $table->unsignedInteger('login_count')->default(0)->comment('登陆次数');

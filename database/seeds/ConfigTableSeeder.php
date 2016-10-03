@@ -20,18 +20,6 @@ class ConfigTableSeeder extends Seeder
             'code'=>'tab_basic',
             'type'=>'group'
         ],[
-            'code'=>'tab_recommend',
-            'type'=>'group'
-        ],[
-            'code'=>'tab_level',
-            'type'=>'group'
-        ],[
-            'code'=>'tab_withdraw',
-            'type'=>'group'
-        ],[
-            'code'=>'tab_corps',
-            'type'=>'group'
-        ],[
             'parent_id'=>1,
             'code'=>'web_title',
             'type'=>'text',
@@ -57,106 +45,6 @@ class ConfigTableSeeder extends Seeder
             'code'=>'web_qq',
             'type'=>'text',
             'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'point2rem.1',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'point2rem.2',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'point2rem.3',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'point2rem.4',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'point2rem.5',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'user_reg',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'user_act',
-            'type'=>'text',
-            'value'=>'1'
-        ],[
-            'parent_id'=>3,
-            'code'=>'user_act_point1',
-            'type'=>'text',
-            'value'=>'50'
-        ],[
-            'parent_id'=>3,
-            'code'=>'user_act_point2',
-            'type'=>'text',
-            'value'=>'20'
-        ],[
-            'parent_id'=>4,
-            'code'=>'level.1',
-            'type'=>'text',
-            'value'=>'0'
-        ],[
-            'parent_id'=>4,
-            'code'=>'level.2',
-            'type'=>'text',
-            'value'=>'10'
-        ],[
-            'parent_id'=>4,
-            'code'=>'level.3',
-            'type'=>'text',
-            'value'=>'20'
-        ],[
-            'parent_id'=>4,
-            'code'=>'level.4',
-            'type'=>'text',
-            'value'=>'50'
-        ],[
-            'parent_id'=>4,
-            'code'=>'level.5',
-            'type'=>'text',
-            'value'=>'100'
-        ],[
-            'parent_id'=>5,
-            'code'=>'withdraw_fee',
-            'type'=>'text',
-            'value'=>'10'
-        ],[
-            'parent_id'=>5,
-            'code'=>'withdraw_member',
-            'type'=>'text',
-            'value'=>'0'
-        ],[
-            'parent_id'=>5,
-            'code'=>'withdraw_minmoney',
-            'type'=>'text',
-            'value'=>'100'
-        ],[
-            'parent_id'=>6,
-            'code'=>'corps_max_level',
-            'type'=>'text',
-            'value'=>'7'
-        ],[
-            'parent_id'=>6,
-            'code'=>'corps_money',
-            'type'=>'text',
-            'value'=>'200'
-        ],[
-            'parent_id'=>6,
-            'code'=>'corps_level_name',
-            'type'=>'text',
-            'value'=>'军长,师长,旅长,团长,营长,连长,排长'
         ]];
         foreach ($lists as $list) {
             Config::create($list);
