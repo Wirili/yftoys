@@ -17,7 +17,6 @@ class Controller extends BaseController
     {
         $this->config=Config::getConfig();
         view()->share('C',$this->config);
-        $a=Leibie::orderBy('id','asc')->get();
         view()->share('leibies',Leibie::orderBy('id','asc')->get());
     }
 }
