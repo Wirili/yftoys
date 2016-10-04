@@ -54,6 +54,8 @@ class CreateYangpinzlsTable extends Migration
             $table->dateTime('gengxinrq_w')->nullable();
             $table->double('zheshu_w')->nullable();
             $table->boolean('picistrue')->nullable();
+            $table->boolean('is_best')->default(0);
+            $table->boolean('is_hot')->default(0);
             //$table->timestamps();
         });
 

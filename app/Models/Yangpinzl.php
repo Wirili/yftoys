@@ -19,4 +19,12 @@ class Yangpinzl extends Model
         else
             return '/build/default/images/no_picture.gif';
     }
+
+    public function getlururqWAttribute()
+    {
+        if($this->attributes)
+            return date_create($this->attributes['lururq_w'])->format ('Y-m-d');
+        else
+            return '';
+    }
 }
