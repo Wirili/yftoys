@@ -12,7 +12,7 @@
                             <tr align="center">
                                 <th class="text-center" width="60">@lang('basic.id')</th>
                                 <th class="text-center">@lang('goods.pinming')</th>
-                                <th class="text-center" width="80">@lang('goods.leibie')</th>
+                                <th class="text-center" width="80">@lang('goods.leibieid')</th>
                                 <th class="text-center" width="40">@lang('goods.is_best')</th>
                                 <th class="text-center" width="40">@lang('goods.is_hot')</th>
                                 <th class="text-center" width="80">@lang('goods.lururq_w')</th>
@@ -27,6 +27,46 @@
     </div>
     <script>
         $(function () {
+            $('#dt').on('click','[data-best-id]',function(e){
+                $.ajax({
+                    type:'post',
+                    url:'{{URL::route('admin.goods.toggle_best')}}',
+                    data:{
+                        id:$(e.currentTarget).data('best-id'),
+                        _token:'{{csrf_token()}}'
+                    },
+                    success:function(result){
+                        if(result.error>0){
+                            alert(result.msg);
+                        }else{
+                            if(e.currentTarget.className=="fa fa-close text-danger")
+                                e.currentTarget.className="fa fa-check text-success";
+                            else
+                                e.currentTarget.className="fa fa-close text-danger";
+                        }
+                    }
+                });
+            });
+            $('#dt').on('click','[data-hot-id]',function(e){
+                $.ajax({
+                    type:'post',
+                    url:'{{URL::route('admin.goods.toggle_hot')}}',
+                    data:{
+                        id:$(e.currentTarget).data('hot-id'),
+                        _token:'{{csrf_token()}}'
+                    },
+                    success:function(result){
+                        if(result.error>0){
+                            alert(result.msg);
+                        }else{
+                            if(e.currentTarget.className=="fa fa-close text-danger")
+                                e.currentTarget.className="fa fa-check text-success";
+                            else
+                                e.currentTarget.className="fa fa-close text-danger";
+                        }
+                    }
+                });
+            });
             var table = $('#dt').on('draw.dt',function(e, settings){
                 $('[data-toggle="tooltip"]').tooltip();
             })
@@ -47,14 +87,19 @@
                 columns: [
                     {data: 'bianhao',className:'text-center'},
                     {data: 'pinming'},
-                    {data: 'leibieid'},
+                    {
+                        data: 'leibieid',
+                        render:function(data,type,row){
+                            return row.category?row.category.leibie:'';
+                        }
+                    },
                     {
                         data: 'is_best',
                         className: 'text-center',
                         render:function(data,type,row){
                             if(data==0)
-                                return "<i class='fa fa-close text-danger'><i>";
-                            return "<i class='fa fa-check text-success'><i>";
+                                return "<i class='fa fa-close text-danger' data-best-id='"+row.bianhao+"'><i>";
+                            return "<i class='fa fa-check text-success' data-best-id='"+row.bianhao+"'><i>";
                         }
                     },
                     {
@@ -62,8 +107,8 @@
                         className: 'text-center',
                         render:function(data,type,row){
                             if(data==0)
-                                return "<i class='fa fa-close text-danger'><i>";
-                            return "<i class='fa fa-check text-success'><i>";
+                                return "<i class='fa fa-close text-danger' data-hot-id='"+row.bianhao+"'><i>";
+                            return "<i class='fa fa-check text-success' data-hot-id='"+row.bianhao+"'><i>";
                         }
                     },
                     {data: 'lururq_w'},

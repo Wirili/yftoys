@@ -43,6 +43,8 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::get('goods/create', ['uses'=>'Admin\GoodsController@create','as'=>'goods.create']);
     Route::post('goods/save', ['uses'=>'Admin\GoodsController@save','as'=>'goods.save']);
     Route::post('goods/ajax', ['uses'=>'Admin\GoodsController@ajax','as'=>'goods.ajax']);
+    Route::post('goods/toggle_best', ['uses'=>'Admin\GoodsController@toggle_best','as'=>'goods.toggle_best']);
+    Route::post('goods/toggle_hot', ['uses'=>'Admin\GoodsController@toggle_hot','as'=>'goods.toggle_hot']);
 
     //宠物管理路由
     Route::get('farm/index', ['uses'=>'Admin\FarmController@index','as'=>'farm.index']);

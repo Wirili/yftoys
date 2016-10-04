@@ -163,7 +163,7 @@ class GoodsController extends Controller
     public function ajax(Request $request)
     {
         $filter = $request->only(['draw', 'columns', 'order', 'start', 'length']);
-        $data = Yangpinzl::orderBy($filter['columns'][$filter['order'][0]['column']]['data'], $filter['order'][0]['dir'])->forPage($filter['start'] / $filter['length'] + 1, $filter['length'])->get();
+        $data = Yangpinzl::with('category')->orderBy($filter['columns'][$filter['order'][0]['column']]['data'], $filter['order'][0]['dir'])->forPage($filter['start'] / $filter['length'] + 1, $filter['length'])->get();
         $recordsTotal = Yangpinzl::count();
         $recordsFiltered = Yangpinzl::count();
         return [
@@ -172,5 +172,51 @@ class GoodsController extends Controller
             'recordsFiltered' => intval($recordsFiltered),
             'data' => $data->toArray()
         ];
+    }
+
+    public function toggle_best(Request $request){
+        $id=$request->id;
+        $msg=[
+            'error'=>0,
+            'msg'=>''
+        ];
+        if(!$this->adminGate('goods_edit')){
+            $msg['error']=1;
+            $msg['msg']=trans('admin/sys.no_permission');
+            return \Response::json($msg);
+        }
+        $goods=Yangpinzl::find($id);
+        if($goods){
+            $goods->is_best=!$goods->is_best;
+            $goods->update();
+            return \Response::json($msg);
+        }else{
+            $msg['error']=1;
+            $msg['msg']=trans('admin/goods.not_exist');
+            return \Response::json($msg);
+        }
+    }
+
+    public function toggle_hot(Request $request){
+        $id=$request->id;
+        $msg=[
+            'error'=>0,
+            'msg'=>''
+        ];
+        if(!$this->adminGate('goods_edit')){
+            $msg['error']=1;
+            $msg['msg']=trans('admin/sys.no_permission');
+            return \Response::json($msg);
+        }
+        $goods=Yangpinzl::find($id);
+        if($goods){
+            $goods->is_hot=!$goods->is_hot;
+            $goods->update();
+            return \Response::json($msg);
+        }else{
+            $msg['error']=1;
+            $msg['msg']=trans('admin/goods.not_exist');
+            return \Response::json($msg);
+        }
     }
 }
