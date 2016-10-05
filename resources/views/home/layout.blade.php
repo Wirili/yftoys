@@ -68,9 +68,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{{URL::route('index')}}">@lang('index.index')</a></li>
-                <li><a href="{{URL::route('about')}}">@lang('index.about')</a></li>
-                <li><a href="{{URL::route('contact')}}">@lang('index.contact')</a></li>
+                <li><a href="{{URL::route('index')}}">@lang('home.index')</a></li>
+                <li><a href="{{URL::route('goods')}}">@lang('home.goods')</a></li>
+                <li><a href="{{URL::route('about')}}">@lang('home.about')</a></li>
+                <li><a href="{{URL::route('contact')}}">@lang('home.contact')</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
@@ -101,8 +102,8 @@
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="@lang('index.keyword')">
-                        <a type="submit" class="input-group-addon">@lang('index.search')</a>
+                        <input type="text" class="form-control" placeholder="@lang('home.keyword')">
+                        <a type="submit" class="input-group-addon">@lang('home.search')</a>
                     </div>
                 </div>
             </form>

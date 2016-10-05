@@ -14,6 +14,7 @@ return [
     */
 
     'index'=>'首页',
+    'goods'=>'产品展示',
     'about'=>'公司简介',
     'contact'=>'联系我们',
     'search'=>'搜索',
