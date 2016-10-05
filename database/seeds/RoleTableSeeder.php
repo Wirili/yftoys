@@ -26,18 +26,18 @@ class RoleTableSeeder extends Seeder
             'role_id'=>1
         ]];
         $permissions =[[
-            'name'=>'good_show',
+            'name'=>'goods_show',
             'display_name'=>'商品管理'
         ],[
-            'name'=>'good_new',
+            'name'=>'goods_new',
             'parent_id'=>'1',
             'display_name'=>'新增商品'
         ],[
-            'name'=>'good_edit',
+            'name'=>'goods_edit',
             'parent_id'=>'1',
             'display_name'=>'修改商品'
         ],[
-            'name'=>'good_del',
+            'name'=>'goods_del',
             'parent_id'=>'1',
             'display_name'=>'删除商品'
         ],[

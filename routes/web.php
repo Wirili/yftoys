@@ -37,11 +37,14 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::post('config/save', ['uses'=>'Admin\ConfigController@save','as'=>'config.save']);
 
 
-    Route::get('good/index', ['uses'=>'Admin\GoodController@index','as'=>'good.index']);
-    Route::get('good/edit/{id}', ['uses'=>'Admin\GoodController@edit','as'=>'good.edit']);
-    Route::get('good/create', ['uses'=>'Admin\GoodController@create','as'=>'good.create']);
-    Route::post('good/save', ['uses'=>'Admin\GoodController@save','as'=>'good.save']);
-    Route::post('good/ajax', ['uses'=>'Admin\GoodController@ajax','as'=>'good.ajax']);
+    Route::get('goods/index', ['uses'=>'Admin\GoodsController@index','as'=>'goods.index']);
+    Route::get('goods/edit/{id}', ['uses'=>'Admin\GoodsController@edit','as'=>'goods.edit']);
+    Route::get('goods/del/{id}', ['uses'=>'Admin\GoodsController@del','as'=>'goods.del']);
+    Route::get('goods/create', ['uses'=>'Admin\GoodsController@create','as'=>'goods.create']);
+    Route::post('goods/save', ['uses'=>'Admin\GoodsController@save','as'=>'goods.save']);
+    Route::post('goods/ajax', ['uses'=>'Admin\GoodsController@ajax','as'=>'goods.ajax']);
+    Route::post('goods/toggle_best', ['uses'=>'Admin\GoodsController@toggle_best','as'=>'goods.toggle_best']);
+    Route::post('goods/toggle_hot', ['uses'=>'Admin\GoodsController@toggle_hot','as'=>'goods.toggle_hot']);
 
     //宠物管理路由
     Route::get('farm/index', ['uses'=>'Admin\FarmController@index','as'=>'farm.index']);

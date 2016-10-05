@@ -85,20 +85,6 @@
                 <li class="treeview">
                     <a href="javascript:void(0);">
                         <i class="fa fa-dashboard"></i>
-                        <span>会员管理</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li>
-                            <a href="{{URL::route('admin.user.index')}}" target="main-content"><i class="fa fa-circle-o"></i>会员列表</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="javascript:void(0);">
-                        <i class="fa fa-dashboard"></i>
                         <span>商品管理</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -106,7 +92,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="{{URL::route('admin.good.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品列表</a>
+                            <a href="{{URL::route('admin.goods.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品列表</a>
                         </li>
                         <li>
                             <a href="index.html" target="main-content"><i class="fa fa-circle-o"></i>商品类型</a>
@@ -150,6 +136,20 @@
                         </li>
                         <li>
                             <a href="{{URL::route('admin.article_cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章类别</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-dashboard"></i>
+                        <span>会员管理</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{{URL::route('admin.user.index')}}" target="main-content"><i class="fa fa-circle-o"></i>会员列表</a>
                         </li>
                     </ul>
                 </li>
