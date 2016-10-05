@@ -17,32 +17,43 @@ class GoodsController extends Controller
 
     protected $rules = [
         'id' => 'required',
-        'dashu_w' => 'numeric',
-        'neiheshu_w' => 'integer',
-        'meijianshu_w' => 'integer',
-        'ypchang' => 'numeric',
-        'ypkuan' => 'numeric',
-        'ypgao' => 'numeric',
-        'ggchang_w' => 'numeric',
-        'ggkuan_w' => 'numeric',
-        'gggao_w' => 'numeric',
-        'maozhong_w' => 'numeric',
-        'jingzhong_w' => 'numeric',
+        'dashu_w' => 'required|numeric',
+        'neiheshu_w' => 'required|integer',
+        'meijianshu_w' => 'required|integer',
+        'ypchang' => 'required|numeric',
+        'ypkuan' => 'required|numeric',
+        'ypgao' => 'required|numeric',
+        'ggchang_w' => 'required|numeric',
+        'ggkuan_w' => 'required|numeric',
+        'gggao_w' => 'required|numeric',
+        'maozhong_w' => 'required|numeric',
+        'jingzhong_w' => 'required|numeric',
     ];
 
     protected $messages = [
         'id.required' => '产品编号未能为空',
         'dashu_w.numeric' => '打数请输入数字',
+        'dashu_w.required' => '请输入打数',
         'neiheshu_w.integer' => '内盒请输入整数',
+        'neiheshu_w.required' => '请输入内盒',
         'meijianshu_w.integer' => '每件数量请输入整数',
+        'meijianshu_w.required' => '请输入每件数量',
         'ypchang.numeric' => '样品长请输入数字',
+        'ypchang.required' => '请输入样品长',
         'ypkuan.numeric' => '样品宽请输入数字',
+        'ypkuan.required' => '请输入样品宽',
         'ypgao.numeric' => '样品高请输入数字',
+        'ypgao.required' => '请输入样品高',
         'ggchang_w.numeric' => '规格长请输入数字',
+        'ggchang_w.required' => '请输入规格长',
         'ggkuan_w.numeric' => '规格宽请输入数字',
+        'ggkuan_w.required' => '请输入规格宽',
         'gggao_w.numeric' => '规格高请输入数字',
+        'gggao_w.required' => '请输入规格高',
         'maozhong_w.numeric' => '毛重请输入数字',
+        'maozhong_w.required' => '请输入毛重',
         'jingzhong_w.numeric' => '净重请输入数字',
+        'jingzhong_w.required' => '请输入净重',
     ];
 
     public function __construct()
@@ -149,6 +160,11 @@ class GoodsController extends Controller
         $goods->ggchang_w = $request->ggchang_w;
         $goods->ggkuan_w = $request->ggkuan_w;
         $goods->gggao_w = $request->gggao_w;
+        $goods->maozhong_w = $request->maozhong_w;
+        $goods->jingzhong_w = $request->jingzhong_w;
+        $goods->dashu_w = $request->dashu_w;
+        $goods->neiheshu_w = $request->neiheshu_w;
+        $goods->meijianshu_w = $request->meijianshu_w;
         $goods->tuyang = $request->id.'.jpg';
         if($request->hasFile('upload')){
             if(\Storage::disk('picture')->exists('picture/'. $goods->tuyang))
