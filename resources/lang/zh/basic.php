@@ -8,5 +8,6 @@ return [
     'cancel' => '取消',
     'handle' => '操作',
     'home' => '首页',
-    'id' => 'ID'
+    'id' => 'ID',
+    'no_permission' => '没有权限访问，请联系管理员！'
 ];

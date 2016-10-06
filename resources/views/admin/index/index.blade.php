@@ -95,7 +95,7 @@
                             <a href="{{URL::route('admin.goods.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品列表</a>
                         </li>
                         <li>
-                            <a href="index.html" target="main-content"><i class="fa fa-circle-o"></i>商品类型</a>
+                            <a href="{{URL::route('admin.cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品类型</a>
                         </li>
                     </ul>
                 </li>

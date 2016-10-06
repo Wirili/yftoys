@@ -47,6 +47,14 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::post('goods/toggle_best', ['uses'=>'Admin\GoodsController@toggle_best','as'=>'goods.toggle_best']);
     Route::post('goods/toggle_hot', ['uses'=>'Admin\GoodsController@toggle_hot','as'=>'goods.toggle_hot']);
 
+    //商品类别路由
+    Route::get('cat/index', ['uses'=>'Admin\CategoryController@index','as'=>'cat.index']);
+    Route::get('cat/edit/{id}', ['uses'=>'Admin\CategoryController@edit','as'=>'cat.edit']);
+    Route::get('cat/create', ['uses'=>'Admin\CategoryController@create','as'=>'cat.create']);
+    Route::get('cat/del/{id}', ['uses'=>'Admin\CategoryController@del','as'=>'cat.del']);
+    Route::post('cat/save', ['uses'=>'Admin\CategoryController@save','as'=>'cat.save']);
+    Route::post('cat/ajax', ['uses'=>'Admin\CategoryController@ajax','as'=>'cat.ajax']);
+
     //宠物管理路由
     Route::get('farm/index', ['uses'=>'Admin\FarmController@index','as'=>'farm.index']);
     Route::get('farm/edit/{id}', ['uses'=>'Admin\FarmController@edit','as'=>'farm.edit']);

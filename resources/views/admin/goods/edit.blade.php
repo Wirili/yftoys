@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="bianhao">@lang('goods.bianhao')</label>
+                                <label class="col-md-4 control-label" for="id">@lang('goods.bianhao')</label>
                                 <div class="col-md-8">
                                     @if(isset($goods->bianhao))
                                     <p class="form-control-static">{{$goods->bianhao}}</p>
@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="cat_id">@lang('goods.danwei')</label>
                                 <div class="col-md-8">
-                                    <select id="baozhuangfs" class="form-control input-sm" name="baozhuangfs">
+                                    <select id="danwei" class="form-control input-sm" name="danwei">
                                         <option value="0">@lang('goods.pls')</option>
                                         @foreach($dw as $item)
                                             <option value="{{$item->yangpindw}}" @if($item->yangpindw==$goods->danwei) selected @endif>{{$item->yangpindw}}</option>
