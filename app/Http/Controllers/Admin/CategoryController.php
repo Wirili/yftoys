@@ -39,9 +39,11 @@ class CategoryController extends Controller
         if(!$this->adminGate('category_show')){
             return $this->Msg(trans('basic.no_permission'),'','error');
         }
+        $list = Leibie::paginate(20);
         return view('admin.cat.index',[
             'page_title'=>trans('cat.list'),
-            'breadcrumb'=>$this->breadcrumb
+            'breadcrumb'=>$this->breadcrumb,
+            'list'=>$list
         ]);
     }
 

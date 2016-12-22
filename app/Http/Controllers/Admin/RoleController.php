@@ -34,9 +34,11 @@ class RoleController extends Controller
         if(!$this->adminGate('role_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
+        $list =Role::paginate(20);
         return view('admin.role.index',[
             'page_title'=>trans('role.list'),
-            'breadcrumb'=>$this->breadcrumb
+            'breadcrumb'=>$this->breadcrumb,
+            'list'=>$list
         ]);
     }
 

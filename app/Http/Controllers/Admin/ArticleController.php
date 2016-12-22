@@ -37,9 +37,11 @@ class ArticleController extends Controller
         if(!$this->adminGate('article_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
+        $list=Article::paginate(20);
         return view('admin.article.index',[
             'page_title'=>trans('article.list'),
-            'breadcrumb'=>$this->breadcrumb
+            'breadcrumb'=>$this->breadcrumb,
+            'list'=>$list
         ]);
     }
 

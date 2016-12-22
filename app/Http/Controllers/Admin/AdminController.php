@@ -40,9 +40,11 @@ class AdminController extends Controller
         if(!$this->adminGate('admin_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
+        $list = Admin::paginate(20);
         return view('admin.admin.index',[
             'page_title'=>trans('admin.list'),
-            'breadcrumb'=>$this->breadcrumb
+            'breadcrumb'=>$this->breadcrumb,
+            'list'=>$list
         ]);
     }
 
@@ -100,6 +102,19 @@ class AdminController extends Controller
             'permission'=>$permission,
             'perms'=>$perms
         ]);
+    }
+
+    public function del($id)
+    {
+        if (!$this->adminGate('admin_del')) {
+            return $this->Msg(trans('sys.no_permission'), '', 'error');
+        }
+        $user = Admin::find($id);
+        if ($user) {
+            $user->delete();
+            return $this->Msg(trans('admin.del_success'), \URL::route('admin.admin.index'));
+        } else
+            return $this->Msg(trans('admin.del_fail'), \URL::route('admin.admin.index'), 'error');
     }
 
     public function save(Request $request)

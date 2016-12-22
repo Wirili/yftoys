@@ -23,9 +23,11 @@ class UserController extends Controller
         if (!$this->adminGate('user_show')) {
             return $this->Msg(trans('sys.no_permission'), '', 'error');
         }
+        $list = User::paginate(20);
         return view('admin.user.index', [
             'page_title' => trans('user.list'),
-            'breadcrumb' => $this->breadcrumb
+            'breadcrumb' => $this->breadcrumb,
+            'list' => $list
         ]);
     }
 

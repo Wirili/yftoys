@@ -36,9 +36,11 @@ class ArticleCatController extends Controller
         if(!$this->adminGate('article_cat_show')){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
+        $list=ArticleCat::paginate(20);
         return view('admin.article_cat.index',[
             'page_title'=>trans('article_cat.list'),
-            'breadcrumb'=>$this->breadcrumb
+            'breadcrumb'=>$this->breadcrumb,
+            'list'=>$list
         ]);
     }
 

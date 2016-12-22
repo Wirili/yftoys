@@ -17,50 +17,29 @@
                                 <th class="text-center" width="100">@lang('basic.handle')</th>
                             </tr>
                             </thead>
+                            <tbody>
+                            @forelse($list as $item)
+                                <tr>
+                                    <td class="text-center">{{$item->id}}</td>
+                                    <td>{{$item->display_name}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->description}}</td>
+                                    <td class="text-center">
+                                        <a href='{{URL::route('admin.role.edit',['id'=>$item->id])}}' data-toggle='tooltip' data-placement='bottom' title='@lang('basic.edit')' style='padding:0 5px;'><i class='fa fa-edit'></i></a>
+                                        <a href='{{URL::route('admin.role.del',['id'=>$item->id])}}' class='text-danger' data-toggle='tooltip' data-placement='bottom' title='@lang('basic.del')' style='padding:0 5px;'><i class='fa fa-remove'></i></a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="6" class="text-center">暂无记录</td>
+                                </tr>
+                            @endforelse
+                            </tbody>
                         </table>
+                        {{$list->links()}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(function () {
-            var table = $('#dt').on('draw.dt',function(e, settings){
-                $('[data-toggle="tooltip"]').tooltip();
-            })
-            .DataTable({
-                dom:"<'row'<'col-sm-12'l>><'row'<'col-sm-12'tr>><'row'<'col-sm-5'i><'col-sm-7'p>>",
-                pagingType: "full_numbers",
-                pageLength: 10,
-                autoWidth: false,
-                processing: true,
-                serverSide: true,
-                lengthChange: true,
-                searching: false,
-                stateSave: true,
-                ajax: {
-                    type:'POST',
-                    url: "{{URL::route('admin.role.ajax',['_token'=>csrf_token()])}}"
-                },
-                columns: [
-                    {data: 'id',className:'text-center'},
-                    {data: 'display_name'},
-                    {data: 'name'},
-                    {data: 'description'},
-                    {
-                        data: 'id',
-                        className: 'text-center',
-                        orderable: false,
-                        render: function (data, type, row) {
-                            data = "<a href='/admin/role/edit/" + data + "' data-toggle='tooltip' data-placement='bottom' title='@lang('basic.edit')' style='padding:0 5px;'><i class='fa fa-edit'></i></a>"
-                                    + "<a href='/admin/role/del/" + data + "' class='text-danger' data-toggle='tooltip' data-placement='bottom' title='@lang('basic.del')' style='padding:0 5px;'><i class='fa fa-remove'></i></a>";
-                            return data;
-                        }
-                    }
-                ],
-                order: [[0, "desc"]]
-            });
-            $('#dt_length').append("<a class='btn btn-primary pull-right' href='{{URL::route('admin.role.create')}}'>@lang('role.create')</a>");
-        });
-    </script>
 @endsection

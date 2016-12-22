@@ -99,6 +99,7 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function () {
     Route::get('admin/index', ['uses'=>'Admin\AdminController@index','as'=>'admin.index']);
     Route::get('admin/edit/{id}',['uses'=>'Admin\AdminController@edit','as'=>'admin.edit']);
     Route::get('admin/create',['uses'=>'Admin\AdminController@create','as'=>'admin.create']);
+    Route::get('admin/del/{id}',['uses'=>'Admin\AdminController@del','as'=>'admin.del']);
     Route::post('admin/save',['uses'=>'Admin\AdminController@save','as'=>'admin.save']);
     Route::post('admin/ajax', ['uses'=>'Admin\AdminController@ajax','as'=>'admin.ajax']);
 

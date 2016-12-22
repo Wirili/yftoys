@@ -95,7 +95,7 @@
                             <a href="{{URL::route('admin.goods.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品列表</a>
                         </li>
                         <li>
-                            <a href="{{URL::route('admin.cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品类型</a>
+                            <a href="{{URL::route('admin.cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>商品类别</a>
                         </li>
                     </ul>
                 </li>
@@ -135,7 +135,13 @@
                             <a href="{{URL::route('admin.article.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章列表</a>
                         </li>
                         <li>
+                            <a href="{{URL::route('admin.article.create')}}" target="main-content"><i class="fa fa-circle-o"></i>增加文章</a>
+                        </li>
+                        <li>
                             <a href="{{URL::route('admin.article_cat.index')}}" target="main-content"><i class="fa fa-circle-o"></i>文章类别</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::route('admin.article_cat.create')}}" target="main-content"><i class="fa fa-circle-o"></i>增加文章类别</a>
                         </li>
                     </ul>
                 </li>
@@ -166,7 +172,13 @@
                             <a href="{{URL::route('admin.admin.index')}}" target="main-content"><i class="fa fa-circle-o"></i>管理员列表</a>
                         </li>
                         <li>
+                            <a href="{{URL::route('admin.admin.create')}}" target="main-content"><i class="fa fa-circle-o"></i>添加管理员</a>
+                        </li>
+                        <li>
                             <a href="{{URL::route('admin.role.index')}}" target="main-content"><i class="fa fa-circle-o"></i>角色管理</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::route('admin.role.create')}}" target="main-content"><i class="fa fa-circle-o"></i>添加角色</a>
                         </li>
                     </ul>
                 </li>
