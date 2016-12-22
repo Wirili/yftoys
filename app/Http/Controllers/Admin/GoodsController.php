@@ -68,9 +68,11 @@ class GoodsController extends Controller
         if (!$this->adminGate('goods_show')) {
             return $this->Msg(trans('sys.no_permission'), '', 'error');
         }
+        $list = Yangpinzl::with('category')->paginate(20);
         return view('admin.goods.index', [
             'page_title' => trans('goods.list'),
-            'breadcrumb' => $this->breadcrumb
+            'breadcrumb' => $this->breadcrumb,
+            'list' => $list
         ]);
     }
 
