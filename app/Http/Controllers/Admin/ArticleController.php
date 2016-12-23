@@ -109,6 +109,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->alias = $request->alias;
         $article->cat_id = $request->cat_id;
+        $article->lang = $request->lang;
         $article->description = $request->description;
         $article->keywords = $request->keywords;
         $article->description = $request->description;
