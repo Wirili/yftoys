@@ -9,6 +9,9 @@ return [
 
     'title' => '文章标题',
     'alias' => '调用别名',
+    'lang' => '语言',
+    'en' => '英文',
+    'zh' => '中文',
     'cat_id' => '文章类别',
     'description' => '简单描述',
     'keywords' => '关键字',

@@ -19,6 +19,10 @@
                         <div class="col-md-4"><input type="text" id="title" class="form-control input-sm" name="title"  value="{{$article_cat->title}}"></div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-2 control-label" for="title_en">@lang('article_cat.title_en')</label>
+                        <div class="col-md-4"><input type="text" id="title_en" class="form-control input-sm" name="title_en"  value="{{$article_cat->title_en}}"></div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-2 control-label" for="alias">@lang('article_cat.alias')</label>
                         <div class="col-md-4"><input type="text" id="alias" class="form-control input-sm" name="alias"  value="{{$article_cat->alias}}"></div>
                     </div>

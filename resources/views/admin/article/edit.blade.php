@@ -35,6 +35,13 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-2 control-label" for="lang">@lang('article.lang')</label>
+                        <div class="col-md-4">
+                            <label class="radio-inline"><input name="lang" type="radio" value="0" @if($article->lang==0) checked @endif> @lang('article.zh')</label>
+                            <label class="radio-inline"><input name="lang" type="radio" value="1" @if($article->lang==1) checked @endif> @lang('article.en')</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-2 control-label" for="description">@lang('article.description')</label>
                         <div class="col-md-4"><textarea id="description" class="form-control input-sm" name="description" rows="3">{{$article->description}}</textarea></div>
                     </div>

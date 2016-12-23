@@ -147,7 +147,6 @@ class GoodsController extends Controller
             }
         } else {
             return $this->Msg(trans('goods.not_exist'), \URL::route('admin.goods.index'));
-
         }
 
         $goods->pinming = $request->pinming;

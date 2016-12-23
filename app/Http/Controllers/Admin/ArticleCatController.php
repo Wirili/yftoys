@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\models\ArticleCat;
+use Validator;
 
 class ArticleCatController extends Controller
 {
@@ -13,15 +14,13 @@ class ArticleCatController extends Controller
     protected $breadcrumb=[];
 
     protected $rules = [
-        'name' => 'required',
-        'email' => 'required',
-        'password' => 'same:password_confirm',
+        'title' => 'required',
+        'title_en' => 'required',
     ];
 
     protected $messages = [
-        'name.required' => '请输入管理员名称',
-        'email.required' => '请输入电子邮件',
-        'password.same' => '两次密码不相同',
+        'title.required' => '请输入文章类别',
+        'title_en.required' => '请输入英文类别',
     ];
 
     public function __construct()
@@ -92,10 +91,10 @@ class ArticleCatController extends Controller
         if(!$this->adminGate(['article_cat_new','article_cat_edit'])){
             return $this->Msg(trans('sys.no_permission'),'','error');
         }
-//        $validator = Validator::make($request->all(), $this->rules, $this->messages);
-//        if ($validator->fails()) {
-//            return $this->Msg('',null,'error')->withErrors($validator);
-//        }
+        $validator = Validator::make($request->all(), $this->rules, $this->messages);
+        if ($validator->fails()) {
+            return $this->Msg('',null,'error')->withErrors($validator);
+        }
         if ($request->has('id')) {
             $article_cat=ArticleCat::find($request->id);
         } else {
@@ -104,6 +103,7 @@ class ArticleCatController extends Controller
         }
 
         $article_cat->title = $request->title;
+        $article_cat->title_en = $request->title_en;
         $article_cat->alias = $request->alias;
         $article_cat->sort_order = $request->input('sort_order',0);
         $article_cat->save();

@@ -7,7 +7,9 @@ return [
     'tab_basic'=>'通用信息',
 
     'title' => '文章类别',
+    'title_en' => '英文类别',
     'alias' => '调用别名',
+    'lang' => '语言',
     'sort_order' => '排序',
     'add_time' => '添加时间',
 
