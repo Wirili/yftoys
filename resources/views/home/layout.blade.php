@@ -81,7 +81,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{URL::route('index')}}">@lang('home.index')</a></li>
-                    <li><a href="{{URL::route('goods')}}">@lang('home.goods')</a></li>
+                    <li><a href="{{URL::route('goods',['lang'=>'cn'])}}">@lang('home.goods')</a></li>
                     <li><a href="{{URL::route('about')}}">@lang('home.about')</a></li>
                     <li><a href="{{URL::route('contact')}}">@lang('home.contact')</a></li>
                 </ul>

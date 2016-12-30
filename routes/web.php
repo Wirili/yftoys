@@ -12,7 +12,8 @@
 */
 
 Route::get('/',['uses'=>'Home\IndexController@index','as'=>'index']);
-Route::get('index', 'Home\IndexController@index');
+Route::get('{lang}/',['uses'=>'Home\IndexController@index']);
+Route::get('{lang}/index', 'Home\IndexController@index');
 Route::post('login', 'Home\LoginController@login');
 Route::get('login', 'Home\LoginController@showLoginForm')->name('login');
 Route::post('logout', 'Home\LoginController@logout')->name('logout');
@@ -22,8 +23,8 @@ Route::post('register', 'Home\RegisterController@register');
 
 Route::get('about', 'Home\ArticleController@about')->name('about');
 Route::get('contact', 'Home\ArticleController@contact')->name('contact');
-Route::get('category/{id}', 'Home\CategoryController@index')->name('category');
-Route::get('goods', 'Home\GoodsController@index')->name('goods');
+Route::get('{lang}/category/{id}', 'Home\CategoryController@index')->name('category');
+Route::get('{lang}/goods', 'Home\GoodsController@index')->name('goods');
 
 
 Route::group(['prefix' => 'admin','as'=>'admin.'], function () {

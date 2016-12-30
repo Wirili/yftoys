@@ -9,8 +9,9 @@ use App\Http\Requests;
 class IndexController extends Controller
 {
     //
-    public function index()
+    public function index($lang='cn')
     {
-        return view('home.index.index');
+        $lang = $this->getLang($lang);
+        return view("home.$lang.index");
     }
 }

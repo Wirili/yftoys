@@ -10,10 +10,10 @@ use App\Models\Yangpinzl;
 class CategoryController extends Controller
 {
     //
-    public function index($id)
+    public function index($id,$lang='cn')
     {
         $goods=Yangpinzl::where('leibieid',$id)->orderBy('lururq_w','desc')->paginate(12);
-        return view('home.category.index',[
+        return view("home.$lang.category",[
             'goods'=>$goods
         ]);
     }
