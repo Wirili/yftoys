@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string('keywords',255)->default('')->comment('关键字');
             $table->string('description',255)->default('')->comment('简单描述');
             $table->text('contents')->comment('文章内容');
+            $table->integer('sort_order')->default(100)->comment('排序');
             $table->boolean('lang')->default(0)->comment('中英文 0 中文 1 英文 ');
             $table->dateTime('add_time')->nullable()->comment('添加时间');
 //            $table->timestamps();

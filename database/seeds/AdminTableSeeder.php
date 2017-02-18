@@ -16,7 +16,8 @@ class AdminTableSeeder extends Seeder
         $lists=[[
             'name'=>'admin',
             'email'=>'admin@qq.com',
-            'password'=>\Hash::make('admin')
+            'password'=>'b605e86d02eef8bfd0646f6a704c17c9',
+            'salt'=>'1234',
         ]];
         foreach ($lists as $list) {
             Admin::create($list);

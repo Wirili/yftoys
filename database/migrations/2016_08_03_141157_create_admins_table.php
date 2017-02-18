@@ -21,6 +21,7 @@ class CreateAdminsTable extends Migration
             $table->dateTime('last_time')->nullable()->comment('最后登陆时间');
             $table->string('last_ip',15)->default('')->comment('登陆IP');
             $table->unsignedInteger('login_count')->default(0)->comment('登陆次数');
+            $table->string('salt',6)->default('')->comment('加盐');
             $table->rememberToken();
 //            $table->timestamps();
         });
